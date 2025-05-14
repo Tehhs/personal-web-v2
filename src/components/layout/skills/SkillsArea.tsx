@@ -69,7 +69,8 @@ export const SkillsArea : React.FC = () => {
         <div className="relative w-full overflow-hidden w-full h-[20rem]">
             {
                 [...skills.map( (skill, i) => {
-                    return <MoveContainer key={skill.Key} i={skill.Key} onAnimationEnd={()=>{
+                    return <MoveContainer key={skill.Key} i={skill.Key} onAnimationEnd={(element)=>{
+                        element.target.style['opacity'] = '0%'
                         setSkills((SKILLS)=>{
                             return SKILLS.filter( (s) => s != skill)
                         })
@@ -80,7 +81,8 @@ export const SkillsArea : React.FC = () => {
                         />
                     </MoveContainer>
                 }),
-                <MoveContainer key={"iniasdtial"} i={"iasdnitial"} className="flex flex-row gap-20" onAnimationEnd={()=>{
+                <MoveContainer key={"iniasdtial"} i={"iasdnitial"} className="flex flex-row gap-20" onAnimationEnd={(element)=>{
+                    element.target.style['opacity'] = '0%'
                     setRenderInitialSkills(false) 
                 }}>
                     {
