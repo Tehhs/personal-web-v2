@@ -9,7 +9,7 @@ export default function Home() {
       <main className="min-h-screen text-white max-w-[80%] w-full mx-auto px-4">
         
         {/* Part: First Impression  */}
-        <div className="flex min-h-2/3 items-center bg-[#ffffff1e]">
+        <div className="flex min-h-2/3 items-center ">
           {/* Left side  */}
           <div className="flex flex-1 items-center flex-col font-thin">
             <div className="text-4xl flex flex-col gap-5">

@@ -63,9 +63,6 @@ export const SkillsArea : React.FC = () => {
     
 
     return <div> 
-        <div>
-            this is the skills area 
-        </div>
         <div className="relative w-full overflow-hidden w-full h-[20rem]">
             {
                 [...skills.map( (skill, i) => {
