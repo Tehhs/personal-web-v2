@@ -24,3 +24,9 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+.top-component-container { 
+  clip-path: polygon(100% 0, 100% 74%, 63% 83%, 0 76%, 0 0);
+  background-color: #000000ab; 
+}
