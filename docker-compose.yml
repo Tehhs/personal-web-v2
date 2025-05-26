@@ -15,3 +15,12 @@ services:
       - ./frontend:/frontend
     stdin_open: true
     userns_mode: "host"
+  awscli:
+    image: amazon/aws-cli:latest
+    volumes:
+      - ~/.aws:/root/.aws 
+    stdin_open: true
+    userns_mode: "host"
+    ports:
+      - "45685:45685"
+
