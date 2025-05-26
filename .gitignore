@@ -43,4 +43,10 @@ next-env.d.ts
 # Dist
 /dist/
 
+# Terraform outputs this 
+infra/.terraform/
+infra/.terraform.lock.hcl
+# NextJS outputs 
+frontend/.next/
+
 

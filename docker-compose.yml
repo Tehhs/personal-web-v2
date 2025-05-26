@@ -1,0 +1,17 @@
+version: '3.8'
+services: 
+  terraform:
+    image: hashicorp/terraform:latest
+    userns_mode: "host"
+    working_dir: /workspace
+    stdin_open: true
+    volumes:
+      - ./infra:/workspace
+    tty: true
+  node:
+    image: node:22
+    working_dir: /frontend
+    volumes:
+      - ./frontend:/frontend
+    stdin_open: true
+    userns_mode: "host"
