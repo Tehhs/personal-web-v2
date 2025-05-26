@@ -26,3 +26,6 @@ auth:
 
 install: 
 	bash ./scripts/linux/install.sh
+
+build: 
+	docker build -t "webserverimage" ./webserver
