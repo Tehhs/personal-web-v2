@@ -30,10 +30,37 @@ sudo apt install make
 sudo apt-get install unzip
 
 # Install awscli 
-curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64-2.22.10.zip" -o "awscliv2.zip"
-unzip awscliv2.zip -d /tmp/awscli-unzip
-sudo /tmp/awscli-unzip/aws/install
-rm -rf awscliv2.zip /tmp/awscli-unzip
+if ! command -v aws &> /dev/null
+then
+    curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64-2.22.10.zip" -o "awscliv2.zip"
+    unzip awscliv2.zip -d /tmp/awscli-unzip
+    sudo /tmp/awscli-unzip/aws/install
+    rm -rf awscliv2.zip /tmp/awscli-unzip
+else 
+    echo "awscli is already installed"
+fi
+
+
+
+# Install go 
+if ! command -v go &> /dev/null
+then
+    sudo rm -rf /usr/local/go && tar -C /usr/local -xzf go1.24.3.linux-amd64.tar.gz
+    sudo curl "https://dl.google.com/go/go1.24.3.linux-amd64.tar.gz" -o "/tmp/go.tar.gz"
+    sudo tar -C /usr/local -xzf /tmp/go.tar.gz
+    sudo rm -rf /tmp/go.tar.gz
+
+    # Add Go to PATH in ~/.bashrc if not already present
+    if ! grep -q '/usr/local/go/bin' ~/.bashrc; then
+        echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
+    fi
+
+    source ~/.bashrc
+    export PATH=$PATH:/usr/local/go/bin
+    go install github.com/go-delve/delve/cmd/dlv@latest
+fi 
+
 
 # Done 
 echo "Install finished"
+

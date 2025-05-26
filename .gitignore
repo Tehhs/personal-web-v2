@@ -46,7 +46,7 @@ next-env.d.ts
 # Terraform outputs this 
 infra/.terraform/
 infra/.terraform.lock.hcl
-# NextJS outputs 
+# NextJS making random files
 frontend/.next/
-
-
+# Go making random files 
+webserver/__debug_bin*
