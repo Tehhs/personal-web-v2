@@ -23,4 +23,11 @@ services:
     userns_mode: "host"
     ports:
       - "45685:45685"
+  gin-swagger: 
+    build:
+      context: ./docker/swag
+      dockerfile: Dockerfile
+    working_dir: /workspace
+    volumes: 
+      - .:/workspace
 

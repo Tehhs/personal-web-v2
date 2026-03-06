@@ -2,6 +2,8 @@
 TERRAFORM = docker compose run --rm terraform
 NODE = docker compose run --rm -p 3000:3000 node 
 AWSCLI = docker compose run --rm awscli
+GIN_SWAGGER = docker compose run --rm gin-swagger
+
 
 
 build-webserver:
@@ -29,3 +31,6 @@ install:
 
 build: 
 	docker build -t "webserverimage" ./webserver
+
+webserver-oapi-generate: 
+	$(GIN_SWAGGER) init -g webserver/main.go -o webserver/swagger -ot json
