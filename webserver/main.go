@@ -6,7 +6,7 @@ import (
 
 func main() {
 	r := gin.Default()
-	r.GET("/", func(c *gin.Context) {
+	r.GET("/hello", func(c *gin.Context) {
 		c.String(200, "Hello, World!")
 	})
 	r.Run()
