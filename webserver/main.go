@@ -11,3 +11,10 @@ func main() {
 	})
 	r.Run()
 }
+
+
+func SubmitMessage(c *gin.Context) { 
+
+	c.String(200, "Message Submitted")
+
+}
